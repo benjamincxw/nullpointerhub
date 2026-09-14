@@ -73,15 +73,16 @@ export function Services() {
       </div>
 
       <p className="mt-10 text-sm text-ash">
-        Already live? Ongoing website care, hosting, and hourly add on
-        development are also available.{" "}
+        Hosting and ongoing website care are separate add ons and are not
+        included in the packages above. Hourly add on development is also
+        available.{" "}
         <a
           href="#contact"
           className="text-chalk underline decoration-hairline underline-offset-4 hover:text-signal"
         >
           get in touch
-        </a>
-        .
+        </a>{" "}
+        for pricing.
       </p>
     </section>
   );

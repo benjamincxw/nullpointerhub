@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/data/projects";
 import { cn } from "@/lib/utils";
@@ -14,7 +15,17 @@ export function WorkCard({ project }: { project: Project }) {
     project.href && "cursor-pointer"
   );
 
-  const mock = (
+  const mock = project.thumbnail ? (
+    <div data-card-image className="absolute inset-[-8%] will-change-transform" aria-hidden="true">
+      <Image
+        src={project.thumbnail}
+        alt=""
+        fill
+        sizes="(min-width: 1024px) 40vw, 90vw"
+        className="object-cover object-top"
+      />
+    </div>
+  ) : (
     <div
       data-card-image
       className="absolute inset-[-8%] will-change-transform"
@@ -48,7 +59,13 @@ export function WorkCard({ project }: { project: Project }) {
   );
 
   return (
-    <div className="flex shrink-0 flex-col" style={{ width: project.width, marginTop: project.offsetY }}>
+    <div
+      className="flex shrink-0 flex-col"
+      style={{
+        width: `max(220px, min(62vw, ${project.width}px))`,
+        marginTop: project.offsetY,
+      }}
+    >
       {project.href ? (
         <Link href={project.href} target="_blank" rel="noopener noreferrer" className={cardClassName}>
           {mock}

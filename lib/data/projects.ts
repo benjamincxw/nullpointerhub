@@ -9,76 +9,83 @@ export interface Project {
   width: number;
   /** Vertical offset in px, staggers the strip. */
   offsetY: number;
-  /** Gradient pair used behind the abstract site mock. Swap for a real screenshot via `thumbnail` when cleared. */
+  /** Gradient pair used behind the abstract site mock. Ignored once `thumbnail` is set. */
   gradient: [string, string];
-  /** Drop a real screenshot path here later to replace the generated mock. */
+  /** Path under /public to a real screenshot (e.g. "/work/renovation.png"); replaces the generated mock when set. */
   thumbnail?: string;
   href?: string;
 }
 
 export const projects: Project[] = [
   {
-    id: "renovation",
-    industry: "Renovation & plumbing",
-    description: "Quote request funnel built around before/after jobs.",
-    tag: "Prototype",
-    width: 420,
+    id: "sparkflare",
+    industry: "Custom laser engraving",
+    description: "Live storefront for a laser engraving studio, synced with Shopee and Etsy orders.",
+    tag: "Reference",
+    width: 460,
     offsetY: 0,
     gradient: ["#1c2c2a", "#0a0e14"],
+    thumbnail: "/work/sparkflare.png",
   },
   {
-    id: "dental",
+    id: "elite-dental",
     industry: "Dental clinic",
-    description: "Appointment focused layout with treatment breakdowns.",
+    description: "Appointment-focused layout with services, team and booking calendar.",
+    tag: "Reference",
+    width: 420,
+    offsetY: 32,
+    gradient: ["#1e1c2e", "#0a0e14"],
+    thumbnail: "/work/elite-dental.png",
+  },
+  {
+    id: "zenth",
+    industry: "Branding & identity studio",
+    description: "Portfolio site for a branding studio's logo and identity work.",
+    tag: "Reference",
+    width: 380,
+    offsetY: -18,
+    gradient: ["#16232e", "#0a0e14"],
+    thumbnail: "/work/zenth.png",
+  },
+  {
+    id: "station",
+    industry: "Cafe & bistro",
+    description: "Menu, hours and story for a century-old railway station cafe.",
     tag: "Prototype",
     width: 500,
-    offsetY: 36,
-    gradient: ["#16232e", "#0a0e14"],
-  },
-  {
-    id: "fabrication",
-    industry: "Steel fabrication & welding",
-    description: "Capability showcase for industrial and B2B buyers.",
-    tag: "Reference",
-    width: 360,
-    offsetY: -20,
-    gradient: ["#241c14", "#0a0e14"],
-  },
-  {
-    id: "cafe",
-    industry: "Independent cafe",
-    description: "Menu, hours and location built to scroll fast on one thumb.",
-    tag: "Prototype",
-    width: 480,
-    offsetY: 18,
+    offsetY: 20,
     gradient: ["#231a26", "#0a0e14"],
+    thumbnail: "/work/station.png",
   },
   {
-    id: "roofing",
-    industry: "Polycarbonate roofing & awning",
-    description: "Gallery led site for a visual, quote driven trade.",
-    tag: "Reference",
-    width: 340,
-    offsetY: -8,
-    gradient: ["#1a2330", "#0a0e14"],
+    id: "robert-tan-dental",
+    industry: "Neighbourhood dental practice",
+    description: "Family-friendly dental clinic site with WhatsApp booking and Google reviews.",
+    tag: "Prototype",
+    width: 400,
+    offsetY: -10,
+    gradient: ["#241c14", "#0a0e14"],
+    thumbnail: "/work/robert-tan-dental.png",
   },
   {
-    id: "waterproofing",
-    industry: "Waterproofing specialist",
-    description: "Trust signals and case studies for a skeptical buyer.",
-    tag: "Coming soon",
+    id: "ironclad-auto",
+    industry: "Car repair workshop",
+    description: "Transparent pricing and fast turnarounds for a neighbourhood workshop.",
+    tag: "Prototype",
     width: 460,
-    offsetY: 28,
-    gradient: ["#142622", "#0a0e14"],
+    offsetY: 26,
+    gradient: ["#1a2330", "#0a0e14"],
+    thumbnail: "/work/ironclad-auto.png",
   },
   {
-    id: "community",
-    industry: "Bilingual community site",
-    description: "CMS backed EN/BM site an admin updates without a dev.",
-    tag: "Reference",
+    id: "lumen-interiors",
+    industry: "Interior design & renovation",
+    description: "Portfolio and render-to-build promise for an interior design firm.",
+    tag: "Prototype",
     width: 520,
     offsetY: -14,
-    gradient: ["#1e1c2e", "#0a0e14"],
+    gradient: ["#142622", "#0a0e14"],
+    thumbnail: "/work/lumen-interiors.png",
   },
   {
     id: "yours",
@@ -88,6 +95,13 @@ export const projects: Project[] = [
     width: 380,
     offsetY: 12,
     gradient: ["#132a29", "#0a0e14"],
-    href: "https://wa.me/60162303136?text=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20website%20for%20my%20business.",
+    href: "https://wa.me/60103053510?text=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20website%20for%20my%20business.",
   },
 ];
+
+export const WHATSAPP_NUMBER = "60103053510";
+export const WHATSAPP_DISPLAY = "010 305 3510";
+
+export function whatsappLink(message: string) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}

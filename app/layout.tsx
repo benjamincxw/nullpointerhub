@@ -3,6 +3,7 @@ import { Inter, Instrument_Serif } from "next/font/google";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
 import { Nav } from "@/components/layout/nav";
 import { Footer } from "@/components/layout/footer";
+import StyledJsxRegistry from "./registry";
 import "./globals.css";
 
 const inter = Inter({
@@ -57,7 +58,7 @@ const jsonLd = {
   name: "NullPointer Hub",
   description:
     "Web design and software studio building fixed-price websites for small and medium businesses in Selangor, Malaysia.",
-  telephone: "+60162303136",
+  telephone: "+60103053510",
   areaServed: "Malaysia",
   priceRange: "$$",
   address: {
@@ -80,11 +81,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-full">
-        <SmoothScrollProvider>
-          <Nav />
-          <main>{children}</main>
-          <Footer />
-        </SmoothScrollProvider>
+        <StyledJsxRegistry>
+          <SmoothScrollProvider>
+            <Nav />
+            <main>{children}</main>
+            <Footer />
+          </SmoothScrollProvider>
+        </StyledJsxRegistry>
       </body>
     </html>
   );

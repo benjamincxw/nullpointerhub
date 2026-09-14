@@ -46,8 +46,8 @@ export const packages: ServicePackage[] = [
   },
 ];
 
-export const WHATSAPP_NUMBER = "60162303136";
-export const WHATSAPP_DISPLAY = "016 230 3136";
+export const WHATSAPP_NUMBER = "60103053510";
+export const WHATSAPP_DISPLAY = "010 305 3510";
 
 export function whatsappLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

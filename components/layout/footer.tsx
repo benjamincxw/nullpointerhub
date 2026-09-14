@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { WHATSAPP_DISPLAY } from "@/lib/data/packages";
+import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/data/packages";
 
 const LINKS = [
   { href: "#work", label: "Work" },
@@ -34,7 +34,7 @@ export function Footer() {
 
         <div className="text-base text-ash">
           <p>WhatsApp / Call</p>
-          <a href={`tel:+${"60162303136"}`} className="mt-1 block text-lg font-medium text-chalk hover:text-signal">
+          <a href={`tel:+${WHATSAPP_NUMBER}`} className="mt-1 block text-lg font-medium text-chalk hover:text-signal">
             {WHATSAPP_DISPLAY}
           </a>
           <p className="mt-4">Selangor, Malaysia</p>

@@ -205,7 +205,7 @@ export function Hero() {
             </div>
 
             <div className="np-p-h1" style={{ "--start": `${onloadTimed[2].end}ms` } as React.CSSProperties}>
-              Appointments, booked online.
+              Quality work, done right.
             </div>
 
             <div className="np-p-text np-p-scroll" style={rangeVars(pStep.range)}>
@@ -214,7 +214,7 @@ export function Hero() {
             </div>
 
             <div className="np-p-cta np-p-scroll" style={rangeVars(ctaStep.range)}>
-              Book now
+              Call now
             </div>
 
             <Photo className="np-p-figure np-p-scroll" style={rangeVars(figure1Step.range)} />

@@ -50,7 +50,7 @@ export function RevealHeading({ lines, as = "h2", className, id }: RevealHeading
     <Tag ref={containerRef as never} id={id} className={cn("block", className)}>
       <span aria-hidden="true">
         {lines.map((line, i) => (
-          <span key={i} className="block overflow-hidden">
+          <span key={i} className="-mb-[0.2em] block overflow-hidden pb-[0.2em]">
             <span data-reveal-line className="block will-change-transform">
               {line}
             </span>
