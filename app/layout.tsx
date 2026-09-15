@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
 import { Nav } from "@/components/layout/nav";
@@ -35,6 +36,20 @@ export const metadata: Metadata = {
     "website design Selangor",
     "affordable website Malaysia",
   ],
+  alternates: {
+    canonical: siteUrl,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "NullPointer Hub: Websites that look expensive, priced like they aren't",
     description:
@@ -56,6 +71,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "NullPointer Hub",
+  url: siteUrl,
+  image: `${siteUrl}/logo.png`,
+  logo: `${siteUrl}/logo.png`,
   description:
     "Web design and software studio building fixed-price websites for small and medium businesses in Selangor, Malaysia.",
   telephone: "+60103053510",
@@ -88,6 +106,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Footer />
           </SmoothScrollProvider>
         </StyledJsxRegistry>
+        <Analytics />
       </body>
     </html>
   );
