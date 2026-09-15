@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Inter, Instrument_Serif } from "next/font/google";
-import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
-import { Nav } from "@/components/layout/nav";
-import { Footer } from "@/components/layout/footer";
 import StyledJsxRegistry from "./registry";
 import "./globals.css";
 
@@ -99,13 +96,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-full">
-        <StyledJsxRegistry>
-          <SmoothScrollProvider>
-            <Nav />
-            <main>{children}</main>
-            <Footer />
-          </SmoothScrollProvider>
-        </StyledJsxRegistry>
+        <StyledJsxRegistry>{children}</StyledJsxRegistry>
         <Analytics />
       </body>
     </html>
