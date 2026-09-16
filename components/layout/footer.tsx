@@ -37,6 +37,10 @@ export function Footer() {
           <a href={`tel:+${WHATSAPP_NUMBER}`} className="mt-1 block text-lg font-medium text-chalk hover:text-signal">
             {WHATSAPP_DISPLAY}
           </a>
+          <p className="mt-4">Email</p>
+          <a href="mailto:hello@nullpointerhub.com" className="mt-1 block text-lg font-medium text-chalk hover:text-signal">
+            hello@nullpointerhub.com
+          </a>
           <p className="mt-4">Selangor, Malaysia</p>
         </div>
       </div>

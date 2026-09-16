@@ -1,4 +1,4 @@
-import { MessageCircle, Phone } from "lucide-react";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RevealHeading } from "@/components/ui/reveal-heading";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, whatsappLink } from "@/lib/data/packages";
@@ -38,6 +38,12 @@ export function Contact() {
           <a href={`tel:+${WHATSAPP_NUMBER}`}>
             <Phone className="h-5 w-5" aria-hidden="true" />
             {WHATSAPP_DISPLAY}
+          </a>
+        </Button>
+        <Button asChild variant="outline" size="default">
+          <a href="mailto:hello@nullpointerhub.com">
+            <Mail className="h-5 w-5" aria-hidden="true" />
+            hello@nullpointerhub.com
           </a>
         </Button>
       </div>
