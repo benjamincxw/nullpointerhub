@@ -58,7 +58,7 @@ export function Nav() {
         <a
           href="#hero"
           onClick={(e) => handleAnchorClick(e, "#hero")}
-          className="flex items-center gap-2.5 px-1 text-base font-semibold"
+          className="flex items-center gap-2.5 px-1 text-base font-semibold transition-opacity duration-200 hover:opacity-80"
         >
           <Image src="/logo.png" alt="" width={36} height={36} className="h-9 w-9 rounded-lg" priority />
           NullPointer Hub
@@ -91,7 +91,7 @@ export function Nav() {
 
         <button
           onClick={() => setMenuOpen((open) => !open)}
-          className="rounded-full p-2.5 text-chalk md:hidden"
+          className="rounded-full p-2.5 text-chalk transition-colors duration-200 hover:bg-white/5 md:hidden"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
         >

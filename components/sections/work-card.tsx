@@ -11,8 +11,8 @@ const TAG_STYLES: Record<Project["tag"], string> = {
 
 export function WorkCard({ project }: { project: Project }) {
   const cardClassName = cn(
-    "group relative block aspect-[4/3] overflow-hidden rounded-lg border border-hairline",
-    project.href && "cursor-pointer"
+    "group relative block aspect-[4/3] overflow-hidden rounded-lg border border-hairline transition-[border-color,transform] duration-200",
+    project.href && "cursor-pointer hover:border-signal/50 hover:-translate-y-1"
   );
 
   const mock = project.thumbnail ? (

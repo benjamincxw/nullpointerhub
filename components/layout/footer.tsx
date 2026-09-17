@@ -26,7 +26,11 @@ export function Footer() {
 
         <nav aria-label="Footer" className="flex flex-col gap-3 text-base text-ash">
           {LINKS.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-chalk">
+            <a
+              key={link.href}
+              href={link.href}
+              className="w-fit transition-colors duration-200 hover:text-chalk"
+            >
               {link.label}
             </a>
           ))}
@@ -34,11 +38,17 @@ export function Footer() {
 
         <div className="text-base text-ash">
           <p>WhatsApp / Call</p>
-          <a href={`tel:+${WHATSAPP_NUMBER}`} className="mt-1 block text-lg font-medium text-chalk hover:text-signal">
+          <a
+            href={`tel:+${WHATSAPP_NUMBER}`}
+            className="mt-1 block w-fit text-lg font-medium text-chalk transition-colors duration-200 hover:text-signal"
+          >
             {WHATSAPP_DISPLAY}
           </a>
           <p className="mt-4">Email</p>
-          <a href="mailto:hello@nullpointerhub.com" className="mt-1 block text-lg font-medium text-chalk hover:text-signal">
+          <a
+            href="mailto:hello@nullpointerhub.com"
+            className="mt-1 block w-fit text-lg font-medium text-chalk transition-colors duration-200 hover:text-signal"
+          >
             hello@nullpointerhub.com
           </a>
           <p className="mt-4">Selangor, Malaysia</p>

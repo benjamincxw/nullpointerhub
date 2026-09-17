@@ -48,7 +48,7 @@ export function MessageBubble({ message }: { message: Message }) {
                 href={attachment.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-hairline px-3 py-1 text-xs text-ash hover:text-signal"
+                className="rounded-full border border-hairline px-3 py-1 text-xs text-ash transition-colors duration-200 hover:border-signal/50 hover:text-signal"
               >
                 {attachment.filename}
               </a>

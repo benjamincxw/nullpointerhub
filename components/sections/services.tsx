@@ -27,10 +27,10 @@ export function Services() {
           <div
             key={pkg.id}
             className={cn(
-              "flex flex-col rounded-2xl border p-8",
+              "flex flex-col rounded-2xl border p-8 transition-colors duration-200",
               pkg.badge
-                ? "border-signal/40 bg-signal/[0.04] lg:-translate-y-5"
-                : "border-hairline"
+                ? "border-signal/40 bg-signal/[0.04] hover:border-signal/70 lg:-translate-y-5"
+                : "border-hairline hover:border-chalk/40"
             )}
           >
             {pkg.badge && (
@@ -78,7 +78,7 @@ export function Services() {
         available.{" "}
         <a
           href="#contact"
-          className="text-chalk underline decoration-hairline underline-offset-4 hover:text-signal"
+          className="text-chalk underline decoration-hairline underline-offset-4 transition-colors duration-200 hover:text-signal"
         >
           get in touch
         </a>{" "}
