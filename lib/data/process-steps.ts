@@ -27,6 +27,6 @@ export const processSteps: ProcessStep[] = [
     number: "04",
     title: "Launch and handover",
     description:
-      "Your site goes live on your domain, and you get full ownership of the code, content and hosting access.",
+      "Your site goes live on your domain, and you get full ownership of the code and content. We handle hosting for you.",
   },
 ];
