@@ -7,7 +7,6 @@ import { useGSAP } from "@gsap/react";
 import { processSteps } from "@/lib/data/process-steps";
 import { RevealHeading } from "@/components/ui/reveal-heading";
 import { useReducedMotion } from "@/lib/hooks/use-reduced-motion";
-import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,17 +19,22 @@ export function Process() {
       if (reducedMotion) return;
       const steps = gsap.utils.toArray<HTMLElement>("[data-process-step]");
 
-      steps.forEach((step, i) => {
-        const next = steps[i + 1];
-        if (!next) return;
-        ScrollTrigger.create({
-          trigger: next,
-          start: "top 75%",
-          onEnter: () =>
-            gsap.to(step, { autoAlpha: 0, scale: 0.94, duration: 0.25, ease: "power1.out" }),
-          onLeaveBack: () =>
-            gsap.to(step, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "power1.out" }),
-        });
+      steps.forEach((step) => {
+        gsap.fromTo(
+          step,
+          { autoAlpha: 0, y: 36 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.7,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: step,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
       });
     },
     { scope: sectionRef, dependencies: [reducedMotion] }
@@ -50,15 +54,11 @@ export function Process() {
       />
 
       <div className="mt-20">
-        {processSteps.map((step, i) => (
+        {processSteps.map((step) => (
           <div
             key={step.number}
             data-process-step
-            className={cn(
-              "border-t border-hairline py-12 sm:py-16",
-              !reducedMotion && "sticky top-[20vh]"
-            )}
-            style={{ zIndex: i + 1, background: "var(--color-void)" }}
+            className="border-t border-hairline py-12 sm:py-16"
           >
             <div className="grid gap-5 sm:grid-cols-[auto_1fr] sm:gap-12">
               <span className="font-display text-5xl italic text-ash sm:text-7xl">
