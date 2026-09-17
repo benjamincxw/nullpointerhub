@@ -25,15 +25,11 @@ export function Process() {
         if (!next) return;
         ScrollTrigger.create({
           trigger: next,
-          start: "top bottom",
-          end: "top top",
-          scrub: true,
-          onUpdate: (self) => {
-            gsap.set(step, {
-              scale: 1 - self.progress * 0.06,
-              autoAlpha: 1 - self.progress,
-            });
-          },
+          start: "top 75%",
+          onEnter: () =>
+            gsap.to(step, { autoAlpha: 0, scale: 0.94, duration: 0.25, ease: "power1.out" }),
+          onLeaveBack: () =>
+            gsap.to(step, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "power1.out" }),
         });
       });
     },
