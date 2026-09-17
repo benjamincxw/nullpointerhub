@@ -57,6 +57,7 @@ export function Footer() {
 
       <div className="border-t border-hairline px-6 py-6 text-center text-sm text-ash">
         © {new Date().getFullYear()} NullPointer Hub. All rights reserved.
+        {" "}Business Reg. No. 202603228970
       </div>
     </footer>
   );
