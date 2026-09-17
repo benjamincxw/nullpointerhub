@@ -27,6 +27,6 @@ export const whyPoints: WhyPoint[] = [
     number: "04",
     title: "You own everything",
     description:
-      "Domain, code and content are yours. No platform contracts, no monthly toll to keep your own site online.",
+      "Domain, code and content are yours outright. Hosting and care are a simple monthly add-on, not a platform contract you're locked into.",
   },
 ];
