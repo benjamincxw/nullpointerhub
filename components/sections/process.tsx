@@ -31,7 +31,7 @@ export function Process() {
           onUpdate: (self) => {
             gsap.set(step, {
               scale: 1 - self.progress * 0.06,
-              opacity: 1 - self.progress * 0.6,
+              autoAlpha: 1 - self.progress,
             });
           },
         });
